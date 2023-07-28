@@ -27,7 +27,7 @@ data "aws_iam_policy_document" "pre_packer_lambda_invoke_policy_data" {
     actions = [
       "lambda:InvokeFunction"
     ]
-    resources = [var.success_handler_lambda_arn]
+    resources = [aws_lambda_function.tre_court_document_pre_packer.arn]
   }
 }
 
