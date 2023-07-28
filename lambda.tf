@@ -20,6 +20,14 @@ resource "aws_lambda_function" "tre_court_document_pre_packer" {
   }
 }
 
+resource "aws_lambda_permission" "tre_court_document_pre_packer_permission" {
+  statement_id  = "AllowExecutionFromSNS"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.tre_court_document_pre_packer.function_name
+  principal     = "sns.amazonaws.com"
+  source_arn    = var.tre_internal_topic_arn
+}
+
 resource "aws_lambda_function_event_invoke_config" "pre_packer_success_failure_destinations" {
   function_name = aws_lambda_function.tre_court_document_pre_packer.function_name
   destination_config {
