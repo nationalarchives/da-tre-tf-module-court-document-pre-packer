@@ -5,7 +5,7 @@ resource "aws_lambda_function" "tre_court_document_pre_packer" {
   function_name = "${var.env}-${var.prefix}-court-document-pre-packer"
   role          = aws_iam_role.tre_court_document_pre_packer_role.arn
   timeout       = 30
-  memory        = 1024
+  memory_size   = 1024
   environment {
     variables = {
       "TRE_INTERNAL_TOPIC_ARN" = var.tre_internal_topic_arn

@@ -13,6 +13,11 @@ variable "account_id" {
   type        = string
 }
 
+variable "tre_permission_boundary_arn" {
+  description = "ARN of the TRE permission boundary policy"
+  type = string
+}
+
 variable "tre_internal_topic_arn" {
   description = "ARN of the tre-out sns topic"
   type = string
@@ -23,11 +28,6 @@ variable "court_document_pre_pack_image_versions" {
   type = object({
     tre_court_document_pre_pack = string
   })
-}
-
-variable "tre_permission_boundary_arn" {
-  description = "ARN of the TRE permission boundary policy"
-  type = string
 }
 
 variable "ecr_uri_host" {
