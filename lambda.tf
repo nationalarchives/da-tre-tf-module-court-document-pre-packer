@@ -1,4 +1,4 @@
-# TRE-Forward Lambda
+# TRE Court Document Pre Packer Lambda
 resource "aws_lambda_function" "tre_court_document_pre_packer" {
   image_uri     = "${var.ecr_uri_host}/${var.ecr_uri_repo_prefix}${var.prefix}-mk-junk-example:${var.court_document_pre_pack_image_versions.tre_court_document_pre_pack}"
   package_type  = "Image"

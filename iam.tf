@@ -11,7 +11,7 @@ data "aws_iam_policy_document" "lambda_assume_role_policy" {
 }
 
 resource "aws_iam_role" "tre_court_document_pre_packer_role" {
-  name               = "${var.env}-${var.prefix}-forward-lambda-role"
+  name               = "${var.env}-${var.prefix}-court-document-pre-packer-lambda-role"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role_policy.json
   permissions_boundary = var.tre_permission_boundary_arn
 }
