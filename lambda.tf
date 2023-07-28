@@ -21,7 +21,7 @@ resource "aws_lambda_function" "tre_court_document_pre_packer" {
 }
 
 resource "aws_lambda_function_event_invoke_config" "pre_packer_success_failure_destinations" {
-  function_name = aws_lambda_function.tre_court_document_pre_packer
+  function_name = aws_lambda_function.tre_court_document_pre_packer.function_name
   destination_config {
     on_success {
       destination = var.success_handler_lambda_arn
