@@ -8,6 +8,14 @@ data "aws_iam_policy_document" "lambda_assume_role_policy" {
       identifiers = ["lambda.amazonaws.com"]
     }
   }
+  statement {
+    sid     = "InvokeLambdaPolicy"
+    effect  = "Allow"
+    actions = ["lambda:InvokeFunction"]
+    resources = [
+      var.success_handler_lambda_arn
+    ]
+  }
 }
 
 resource "aws_iam_role" "tre_court_document_pre_packer_role" {
