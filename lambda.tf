@@ -39,9 +39,3 @@ resource "aws_lambda_function_event_invoke_config" "pre_packer_success_failure_d
     }
   }
 }
-
-resource "aws_lambda_event_source_mapping" "tre_internal_sns" {
-  batch_size                         = 1
-  function_name                      = aws_lambda_function.tre_court_document_pre_packer.function_name
-  event_source_arn                   = var.tre_internal_topic_arn
-}
