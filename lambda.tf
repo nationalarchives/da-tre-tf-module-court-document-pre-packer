@@ -7,9 +7,6 @@ resource "aws_lambda_function" "tre_court_document_pre_packer" {
   timeout       = 30
   memory_size   = 1024
 
-  create_async_event_config = true
-  attach_async_event_policy = true
-
   environment {
     variables = {
       "TRE_INTERNAL_TOPIC_ARN" = var.tre_internal_topic_arn
