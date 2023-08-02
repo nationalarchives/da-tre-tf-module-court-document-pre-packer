@@ -21,6 +21,12 @@ resource "aws_iam_role_policy_attachment" "tre_court_document_pre_packer_lambda_
   policy_arn = "arn:aws:iam::aws:policy/AWSOpsWorksCloudWatchLogs"
 }
 
+resource "aws_iam_role_policy_attachment" "invoke_success_lambda" {
+  role       = aws_iam_role.tre_court_document_pre_packer_role.name
+  policy_arn = aws_iam_policy.pre_packer_lambda_invoke_policy.arn
+}
+
+
 data "aws_iam_policy_document" "pre_packer_lambda_invoke_policy_data" {
   statement {
     sid     = "InvokeLambdaPolicy"
