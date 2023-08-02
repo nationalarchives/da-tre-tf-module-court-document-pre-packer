@@ -36,7 +36,7 @@ resource "aws_lambda_function_event_invoke_config" "pre_packer_success_failure_d
       destination = var.success_handler_lambda_arn
     }
     on_failure {
-      destination = var.success_handler_lambda_arn
+      destination = var.failure_handler_lambda_arn
     }
   }
 }

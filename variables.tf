@@ -44,3 +44,8 @@ variable "success_handler_lambda_arn" {
   description = "The success handler lambda's arn"
   type = string
 }
+
+variable "failure_handler_lambda_arn" {
+  description = "The failure handler lambda's arn"
+  type = string
+}
