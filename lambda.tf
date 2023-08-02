@@ -28,14 +28,14 @@ resource "aws_lambda_permission" "tre_court_document_pre_packer_permission" {
   source_arn    = var.tre_internal_topic_arn
 }
 
-#resource "aws_lambda_function_event_invoke_config" "pre_packer_success_failure_destinations" {
-#  function_name = aws_lambda_function.tre_court_document_pre_packer.function_name
-#  destination_config {
-#    on_success {
-#      destination = var.success_handler_lambda_arn
-#    }
-#    on_failure {
-#      destination = var.success_handler_lambda_arn
-#    }
-#  }
-#}
+resource "aws_lambda_function_event_invoke_config" "pre_packer_success_failure_destinations" {
+  function_name = aws_lambda_function.tre_court_document_pre_packer.function_name
+  destination_config {
+    on_success {
+      destination = var.success_handler_lambda_arn
+    }
+    on_failure {
+      destination = var.success_handler_lambda_arn
+    }
+  }
+}
