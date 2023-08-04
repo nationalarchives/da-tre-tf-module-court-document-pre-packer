@@ -7,11 +7,6 @@ resource "aws_lambda_function" "court_document_pre_packer" {
   timeout       = 30
   memory_size   = 1024
 
-  environment {
-    variables = {
-      "TRE_INTERNAL_TOPIC_ARN" = var.tre_internal_topic_arn
-    }
-  }
   tracing_config {
     mode = "Active"
   }
