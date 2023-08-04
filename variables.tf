@@ -40,12 +40,12 @@ variable "ecr_uri_repo_prefix" {
   type = string
 }
 
-variable "success_handler_lambda_arn" {
-  description = "The success handler lambda's arn"
+variable "success_destination_lambda_arn" {
+  description = "The success destination lambda's arn"
   type = string
 }
 
-variable "failure_handler_lambda_arn" {
-  description = "The failure handler lambda's arn"
+variable "failure_destination_lambda_arn" {
+  description = "The failure destination lambda's arn"
   type = string
 }
