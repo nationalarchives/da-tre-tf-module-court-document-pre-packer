@@ -21,7 +21,7 @@ resource "aws_lambda_permission" "court_document_pre_packer_permission" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.court_document_pre_packer.function_name
   principal     = "sns.amazonaws.com"
-  source_arn    = var.da_eventbus_topic_arn
+  source_arn    = var.message_source_arn
 }
 
 resource "aws_lambda_function_event_invoke_config" "pre_packer_success_failure_destinations" {
