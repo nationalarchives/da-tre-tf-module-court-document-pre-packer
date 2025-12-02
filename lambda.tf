@@ -4,7 +4,7 @@ resource "aws_lambda_function" "court_document_pre_packer" {
   package_type  = "Image"
   function_name = "${var.env}-${var.prefix}-court-document-pre-packer"
   role          = aws_iam_role.court_document_pre_packer_role.arn
-  timeout       = 30
+  timeout       = 300
   memory_size   = 1024
 
   tracing_config {
